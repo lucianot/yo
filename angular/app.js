@@ -1,11 +1,18 @@
 (function() {
   var app = angular.module('yo', []);
 
-  app.controller('NamesController', function() {
-    this.names = ['John', 'Paul', 'George'];
+  app.directive('names', function() {
+    return {
+      restrict: 'E',
+      templateUrl: 'names.html',
+      controller: function() {
+        this.names = ['John', 'Paul', 'George'];
 
-    this.add = function(name) {
-      this.names.push(name);
-    }
+        this.add = function(name) {
+          this.names.push(name);
+        };
+      },
+      controllerAs: 'namesCtrl'
+    };
   });
 })();

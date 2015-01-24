@@ -8,18 +8,7 @@
   <body>
     <h1>Yo!</h1>
 
-    <section ng-controller="NamesController as namesCtrl">
-      <ul class="name-list">
-        <li ng-repeat="name in namesCtrl.names">
-          {{ name }}
-        </li>
-      </ul>
-
-      <form ng-submit="namesCtrl.add(name)">
-        <input ng-model="name" type="text" name="name" />
-        <input type="submit" value="Yo!" />
-      </form>
-    </section>
+    <names></names>
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="app.js"></script>
