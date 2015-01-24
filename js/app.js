@@ -5,7 +5,7 @@ $(document).ready(function() {
 function App() {
   this.form = $('.js-form');
   this.name = $('.js-form__name');
-  this.nameList = $('.js-name_list');
+  this.nameList = $('.js-name-list');
   this.names = ['John', 'Paul', 'George'];
 
   this._refreshNames(this.names);
