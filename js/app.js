@@ -27,4 +27,5 @@ App.prototype._submitHandler = function(e) {
 
   this.names.push(newName);
   this._refreshNames(this.names);
+  this.name.val('');
 }

@@ -1,3 +1,5 @@
 angular/bower_components
 js/bower_components
 react/bower_components
+
+.DS_Store
