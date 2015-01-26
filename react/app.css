@@ -1,0 +1,10 @@
+body {
+  color: #003180;
+  font-family: LucidaGrande;
+  margin: 40px;
+}
+
+.name-list {
+  padding: 10px;
+  list-style-type: none;
+}
