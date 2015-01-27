@@ -1,10 +1,10 @@
 <ul class="name-list">
-  <li ng-repeat="name in namesCtrl.names">
+  <li ng-repeat="name in names track by $index">
     {{ name }}
   </li>
 </ul>
 
-<form ng-submit="namesCtrl.add(name)">
-  <input ng-model="name" type="text" name="name" />
+<form name="forms.nameForm" ng-submit="add(name)" >
+  <input ng-model="name" type="text" name="nameInput" />
   <input type="submit" value="Yo!" />
 </form>
