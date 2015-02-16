@@ -7,7 +7,7 @@ class Names {
 		this.form = $('.js-form')
 		this.name = $('.js-form__name')
 
-	  this.form.submit(this._submitHandler.bind(this));
+	  this.form.submit(this._submitHandler.bind(this))
 	}
 
 	render() {
