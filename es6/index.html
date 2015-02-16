@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yo!</title>
+    <link rel="stylesheet" type="text/css" href="app.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Yo!</h1>
+
+    <ul class="name-list js-name-list"></ul>
+
+    <form class="js-form">
+      <input class="js-form__name" type="text" name="name" />
+      <input type="submit" value="Yo!" />
+    </form>
+
+    <script src="jspm_packages/system.js"></script>
+    <script>
+      System.import('app')
+    </script>
+  </body>
+</html>

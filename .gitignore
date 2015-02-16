@@ -1,5 +1,6 @@
 angular/bower_components
 js/bower_components
 react/bower_components
+es6/jspm_packages
 
 .DS_Store
