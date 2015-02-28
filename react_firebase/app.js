@@ -38,8 +38,9 @@ var NameForm = React.createClass({
 });
 
 var Names = React.createClass({
+  mixins: [ReactFireMixin],
+
   getInitialState: function() {
-    this.names = [];
     return {
       names: []
     };
@@ -47,13 +48,7 @@ var Names = React.createClass({
 
   componentWillMount: function() {
     this.firebaseRef = new Firebase("https://yo-names.firebaseio.com/names/");
-
-    // Name added
-    this.firebaseRef.on("child_added", function(dataSnapshot) {
-      // Update page
-      this.names.push(dataSnapshot.val());
-      this.setState({ names: this.names });
-    }.bind(this));
+    this.bindAsArray(this.firebaseRef, "names");
   },
 
   componentWillUnmount: function() {
@@ -61,7 +56,6 @@ var Names = React.createClass({
   },
 
   addName: function(name) {
-    // Add to Firebase
     this.firebaseRef.push({ name: name });
   },
 
