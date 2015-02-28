@@ -1,0 +1,19 @@
+{
+  "name": "react",
+  "version": "0.0.0",
+  "authors": [
+    "Luciano Tavares <lucianomt@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.12.2"
+  }
+}
