@@ -39,27 +39,30 @@ var NameForm = React.createClass({
 
 var Names = React.createClass({
   getInitialState: function() {
+    this.names = [];
     return {
-      names: this.props.names
+      names: []
     };
   },
 
-  // componentWillMount: function() {
-  //   this.firebaseRef = new Firebase("https://ReactFireTodoApp.firebaseio.com/items/");
-  //   this.firebaseRef.on("child_added", function(dataSnapshot) {
-  //     this.items.push(dataSnapshot.val());
-  //     this.setState({
-  //       items: this.items
-  //     });
-  //   }.bind(this));
-  // },
+  componentWillMount: function() {
+    this.firebaseRef = new Firebase("https://yo-names.firebaseio.com/names/");
+
+    // Name added
+    this.firebaseRef.on("child_added", function(dataSnapshot) {
+      // Update page
+      this.names.push(dataSnapshot.val());
+      this.setState({ names: this.names });
+    }.bind(this));
+  },
+
+  componentWillUnmount: function() {
+    this.firebaseRef.off();
+  },
 
   addName: function(name) {
-    // Add new name to list
-    this.state.names.push(name);
-
-    // Update page
-    this.setState({names: this.state.names});
+    // Add to Firebase
+    this.firebaseRef.push({ name: name });
   },
 
   render: function() {
@@ -72,10 +75,8 @@ var Names = React.createClass({
   }
 });
 
-var NAMES = ['John', 'Paul', 'George'];
-
 React.render(
-  <Names names={NAMES}/>,
+  <Names/>,
   document.getElementById('names')
 );
 
