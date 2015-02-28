@@ -51,10 +51,6 @@ var Names = React.createClass({
     this.bindAsArray(this.firebaseRef, "names");
   },
 
-  componentWillUnmount: function() {
-    this.firebaseRef.off();
-  },
-
   addName: function(name) {
     this.firebaseRef.push({ name: name });
   },
